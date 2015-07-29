@@ -252,6 +252,24 @@ describe 'config', ->
       expect(file.watched).to.equal true
 
 
+    it 'should only allow protocol values of http: and https:', ->
+      config = normalizeConfigWithDefaults
+        protocol: 'http:'
+
+      expect(config.protocol).to.equal 'http:'
+
+      config = normalizeConfigWithDefaults
+        protocol: 'https:'
+
+      expect(config.protocol).to.equal 'https:'
+
+      config = normalizeConfigWithDefaults
+        protocol: 'ssl:'
+
+      expect(config.protocol).to.equal 'http:'
+
+
+
     it 'should normalize preprocessors to an array', ->
       config = normalizeConfigWithDefaults
         basePath: ''

@@ -305,6 +305,11 @@ Click <a href="preprocessors.html">here</a> for more information.
 
 **Default:** `'http:'`
 
+**Possible Values:**
+
+* `http:`
+* `https:` 
+
 **Description:** Protocol used for running the Karma webserver.
 
 Determines the use of the Node `http` or `https` class.
